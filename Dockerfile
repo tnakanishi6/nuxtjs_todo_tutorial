@@ -8,7 +8,7 @@ USER app
 WORKDIR $HOME/src
 
 # ビルド時にinstallをする。まだソースがないので、必要な分はコピー
-COPY ./src/package*.json ./
-COPY ./src/yarn.lock ./
+COPY src/package*.json $HOME/src
+COPY src/yarn.lock $HOME/src
 RUN yarn install
 

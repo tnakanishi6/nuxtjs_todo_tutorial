@@ -1,6 +1,6 @@
-# Dockerfileでyarn installした場合、node_modulesがSYNCされないので
-# Dockerを再起動下場合、node_modulesが消えてしまう。それを防ぐために、イメージビルド時にnode_modulesをマウントすることで回避する。
-# https://stackoverflow.com/questions/30043872/docker-compose-node-modules-not-present-in-a-volume-after-npm-install-succeeds/32785014#32785014
+# node_modulesは匿名ボリュームして宣言している。匿名ボリュームにすると、Docker内で領域を確保する。
+# そうすることで、ソース内のnode_modulesと連携を切ることでき、コンテナ内でnode_modulesを管理できる。
+# そうしないと、node_modulesと強制同期してしまい、コンテナ内のnode_modulesが空になっていまう。
 version: '3.8'
 
 services:
@@ -8,13 +8,11 @@ services:
     build: .
     volumes:
       - ./src:/home/app/src:cached
-      - node_modules:/src/node_modules
+      - /home/app/src/node_modules
+    working_dir: /home/app/src
     ports:
       - "3000:3000"
     environment:
     - HOST=0.0.0.0
     - port=3000
     - CHOKIDAR_USEPOLLING=true
-
-volumes:
-  node_modules:
