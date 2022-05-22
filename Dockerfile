@@ -7,3 +7,5 @@ ENV HOME=/home/app
 USER app
 WORKDIR $HOME/src
 
+#RUN yarn install
+
