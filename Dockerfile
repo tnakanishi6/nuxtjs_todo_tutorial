@@ -7,5 +7,8 @@ ENV HOME=/home/app
 USER app
 WORKDIR $HOME/src
 
+# ビルド時にinstallをする。まだソースがないので、必要な分はコピー
+COPY ./src/package*.json ./
+COPY ./src/yarn.lock ./
 RUN yarn install
 
