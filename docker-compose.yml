@@ -7,7 +7,7 @@ services:
   app:
     build: .
     volumes:
-      - ./src:/home/app/src:cached
+      - ./:/home/app/src:cached
       - /home/app/src/node_modules
     working_dir: /home/app/src
     ports:

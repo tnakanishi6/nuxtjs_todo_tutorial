@@ -1,15 +1,12 @@
 {
-  "name": "src",
+  "name": "nuxtjs_todo_tutorial",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate",
-    "lint:prettier": "prettier --check .",
-    "lint": "yarn lint:prettier",
-    "lintfix": "prettier --write --list-different ."
+    "generate": "nuxt generate"
   },
   "dependencies": {
     "core-js": "^3.19.3",
@@ -21,8 +18,6 @@
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^4.2.1",
-    "eslint-config-prettier": "^8.3.0",
-    "postcss": "^8.4.4",
-    "prettier": "^2.5.1"
+    "postcss": "^8.4.4"
   }
 }
