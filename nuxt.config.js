@@ -1,3 +1,5 @@
+import * as FontAwesome from './fontawesome'
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -31,8 +33,16 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    ['@nuxtjs/fontawesome', { component: 'fa', suffix: true}],
   ],
 
+  fontawesome: {
+    icons: {
+      solid: FontAwesome.solid,
+      regular: FontAwesome.regular,
+      brands: FontAwesome.brands
+    }
+  },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
   ],
