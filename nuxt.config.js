@@ -5,7 +5,7 @@ export default {
   head: {
     title: 'nuxtjs_todo_tutorial',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'jp'
     },
     meta: [
       { charset: 'utf-8' },
